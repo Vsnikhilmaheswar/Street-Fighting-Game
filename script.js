@@ -71,16 +71,16 @@ return message
 
   }
   
-  // ** Simulates the whole match untill one player runs out of health **
+  
   play(p1, p2) {
-    // Reset to make sure player health is back to full before starting
+  
 
-    // Make sure the players take turns untill isOver is TRUE
+
     while (!this.isOver) {
-      //Make sure both players get strike() and heal() once each loop
+      
 
     }
-    // Once isOver is TRUE run the declareWinner() method 
+   
     
   }
 
@@ -90,16 +90,15 @@ return message
 let player1 = new Player("Nikhil",100,10)
 let player2 = new Player("Rahul",100,10)
 
-// ** Save original Player Data into a variable in order to reset **
+
 let p1 = player1;
 let p2 = player2;
 
-// ** Create the game object from the Game class **
+
 let game = new Game() 
-// ** Intialize the game by calling updateGame() **
+
 updateGame(p1,p2,game.isOver)
 
-// ** Save intial isOver from the game object inside this variable **
 let gameState = game.isOver;
 
 
