@@ -1,52 +1,15 @@
-/* 
-🌟 APP: Fighting Game
-
-Create an updateGame() function that will update the DOM with the state of the game 👇
-========================================
-
-- updateGame()
-
-These are the 2 classes you must create and their methods 👇
-========================================
-
-class Player {
-  - strike()
-  - heal()
-}
-
-class Game {
-  - play()
-  - checkIsOver()
-  - declareWinner()
-  - reset()
-}
-
-These functions are hard coded in the HTML. So, you can't change their names.
-
-These are all the DIV ID's you're gonna need access to 👇
-========================================================
-#1 ID 👉 'play' = Button to run simulation
-#2 ID 👉 'result' = Div that holds the winner of the match
-#3 ID 👉 'p1Name' = Div that holds player 1's Name
-#4 ID 👉 'p2Name' = Div that holds player 2's Name
-#5 ID 👉 'p1Health' = Div that holds player 1's health
-#6 ID 👉 'p2Health' = Div that holds player 2's health
-*/
-
-// ** Grabs elements from the DOM and stores them into variables **
 let playButton = document.getElementById('play')
 let resultDiv = document.getElementById('result')
 let p1NameDiv = document.getElementById('p1Name')
 let p2NameDiv = document.getElementById('p2Name')
 let p1HealthDiv = document.getElementById('p1Health')
 let p2HealthDiv = document.getElementById('p2Health')
-// const game = new  Game
-// ** Check if either players health is  0 and if it is, then update isOver to true **
+
 const updateGame = (p1,p2,gameState) => {
-  // Update the DOM with the names and the latest health of players
+
   p1NameDiv.innerText = p1.name
   p2NameDiv.innerText = p2.name
-  // Condition IF either player health is <= 0 then set isOver to true and declareWinner
+
   p1HealthDiv.innerText = p1.health
   p2HealthDiv.innerText = p2.health
 if(p1.health<=0 || p2.health <=0)
@@ -58,11 +21,7 @@ if(p1.health<=0 || p2.health <=0)
 }
 }
 
-// ** Create the Player class which can create a player with all it's attributes and methods **
-// qazi = new Player('Qazi', 100, 7)
-// qazi.name 👉 'Qazi'
-// qazi.health 👉 100
-// qazi.attackDmg 👉 7
+
 class Player {
   constructor(name, health, attackDamage) {
     this.name = name;
@@ -118,23 +77,23 @@ return message
   }
 
   play(p1, p2) {
-    // Reset to make sure player health is back to full before starting
+   
      this.reset(p1,p2)
-    // Make sure the players take turns untill isOver is TRUE
+   
     while (!this.isOver) {
      p1.strike(p1,p2,p1.attackDmg)
      p2.heal(p2)
      p2.strike(p2,p1,p2.attackDmg)
      p1.heal(p1)
     }
-    // Once isOver is TRUE run the declareWinner() method 
+   
     return this.declareWinner(this.isOver,p1, p2);  
 
   }
 
 }
 
-// ** Create 2 players using the player class **
+
 let player1 = new Player("Nikhil",100,10)
 let player2 = new Player("Rahul",100,10)
 
@@ -147,7 +106,7 @@ let game = new Game()
 // ** Intialize the game by calling updateGame() **
 updateGame(p1,p2,game.isOver)
 
-// ** Save intial isOver from the game object inside this variable **
+
 let gameState = game.isOver;
 
 playButton.onclick=()=>{
