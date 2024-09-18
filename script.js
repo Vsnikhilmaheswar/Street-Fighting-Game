@@ -1,3 +1,4 @@
+
 let playButton = document.getElementById('play')
 let resultDiv = document.getElementById('result')
 let p1NameDiv = document.getElementById('p1Name')
@@ -6,10 +7,10 @@ let p1HealthDiv = document.getElementById('p1Health')
 let p2HealthDiv = document.getElementById('p2Health')
 
 const updateGame = (p1,p2,gameState) => {
-
+  
   p1NameDiv.innerText = p1.name
   p2NameDiv.innerText = p2.name
-
+  
   p1HealthDiv.innerText = p1.health
   p2HealthDiv.innerText = p2.health
 if(p1.health<=0 || p2.health <=0)
@@ -77,33 +78,32 @@ return message
   }
 
   play(p1, p2) {
-   
+    
      this.reset(p1,p2)
-   
+
     while (!this.isOver) {
      p1.strike(p1,p2,p1.attackDmg)
      p2.heal(p2)
      p2.strike(p2,p1,p2.attackDmg)
      p1.heal(p1)
     }
-   
+    
     return this.declareWinner(this.isOver,p1, p2);  
 
   }
 
 }
 
-
 let player1 = new Player("Nikhil",100,10)
 let player2 = new Player("Rahul",100,10)
 
-// ** Save original Player Data into a variable in order to reset **
+
 let p1 = player1;
 let p2 = player2;
 
-// ** Create the game object from the Game class **
+
 let game = new Game() 
-// ** Intialize the game by calling updateGame() **
+
 updateGame(p1,p2,game.isOver)
 
 
@@ -146,7 +146,7 @@ document.addEventListener('keydown', function(e) {
 
 });
 
-// ** Player 2 Controls **
+
 document.addEventListener('keydown', function(e) {
  
   if(e.key == "p")
