@@ -1,4 +1,4 @@
-Here's a sample description for your README file:
+
 
 ---
 
