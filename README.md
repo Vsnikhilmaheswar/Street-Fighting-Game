@@ -13,4 +13,4 @@ This is a simple, interactive street-fighting game built using JavaScript, CSS, 
 
 This project is designed to showcase basic web development skills and interactive UI functionality.
 
-<img src = "https://raw.githubusercontent.com/Vsnikhilmaheswar/Street-Fighting-Game/main/ezgif.com-video-to-gif-converter%20(1).gif">
+<img  src = "https://raw.githubusercontent.com/Vsnikhilmaheswar/Street-Fighting-Game/main/ezgif.com-video-to-gif-converter%20(1).gif">
